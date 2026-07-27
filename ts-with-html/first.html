@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Use TypeScript within HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1 style="display: flex; justify-content: center; align-items: center; height: 50vh;">Hello World!</h1>
-    <script src="assets/js/operation-1.js"></script>
-    <script src="assets/js/operation-2.js"></script>
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 flex items-center justify-center px-4">
+    <div class="w-full max-w-md rounded-2xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur-md">
+        <p class="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">Stay Updated</p>
+        <h1 class="mb-3 text-3xl font-bold text-white">Subscribe to our newsletter</h1>
+        <p class="mb-6 text-sm text-slate-300">Get the latest updates, tips, and exclusive content straight to your inbox.</p>
+
+        <div class="space-y-4">
+            <input
+                id="emailInput"
+                type="email"
+                placeholder="Enter your email"
+                class="email-input w-full rounded-xl border border-slate-600 bg-slate-900/70 px-4 py-3 text-white outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/30"
+            />
+            <button
+                id="submitButton"
+                type="submit"
+                class="submit-button w-full rounded-xl bg-cyan-500 px-4 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400"
+            >
+                Subscribe
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/newsletter-subscribe.js"></script>
 </body>
 </html>
