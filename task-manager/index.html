@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="task-manager-app">
+        <div class="task-card">
+            <h1 class="task-card__title">My Task List</h1>
+
+            <form class="task-form">
+                <label class="task-form__label" for="new-task">Add a task</label>
+                <div class="task-form__controls">
+                    <input class="task-form__input" type="text" id="new-task" placeholder="Enter a new task">
+                    <button class="task-form__button" type="submit">Add Task</button>
+                </div>
+            </form>
+
+            <div class="task-list">
+                <h2 class="task-list__title">Tasks</h2>
+                <ul class="task-list__items">
+                    <li class="task-list__item">
+                        <label class="task-list__label task-list__label--completed">
+                            <input type="checkbox" checked>
+                            Buy groceries
+                        </label>
+                    </li>
+                    <li class="task-list__item">
+                        <label class="task-list__label">
+                            <input type="checkbox">
+                            Finish TypeScript homework
+                        </label>
+                    </li>
+                    <li class="task-list__item">
+                        <label class="task-list__label">
+                            <input type="checkbox">
+                            Call the dentist
+                        </label>
+                    </li>
+                    <li class="task-list__item">
+                        <label class="task-list__label task-list__label--completed">
+                            <input type="checkbox" checked>
+                            Water the plants
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
