@@ -83,6 +83,7 @@ body {
 
 .task-form__button {
     min-width: 120px;
+    min-height: 52px;
     border: none;
     border-radius: 14px;
     padding: 0 20px;
