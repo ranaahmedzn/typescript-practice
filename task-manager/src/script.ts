@@ -1,41 +1,9 @@
-interface Task {
-    id?: number;
-    title: string;
-    status: boolean;
-}
+import { tasks, generateTasks, getNextTaskId } from "./seed"
 
 const taskForm = document.getElementById("task-form") as HTMLFormElement
 const taskInput = document.getElementById("new-task") as HTMLInputElement
 const tasksList = document.getElementById("tasks-list") as HTMLDivElement
 // const exportButton = document.getElementById("export-tasks") as HTMLButtonElement
-
-const tasks: Task[] = []
-let lastTaskId = 1
-
-function generateTasks(): void {
-    const initialTasks: Task[] = [
-        {
-            title: "Buy Groceries",
-            status: true
-        },
-        {
-            title: "Finish TypeScript Homework",
-            status: false
-        },
-        {
-            title: "Call the dentist",
-            status: false
-        },
-        {
-            title: "Water the plants",
-            status: true
-        }
-    ]
-
-    initialTasks.forEach(task => {
-        tasks.push({ id: lastTaskId++, title: task.title, status: task.status })
-    })
-}
 
 function renderTasks(): void {
     tasksList.innerHTML = ""
@@ -54,9 +22,9 @@ function renderTasks(): void {
         check.checked = task.status
         check.addEventListener("change", () => {
             task.status = check.checked
-            if(task.status){
+            if (task.status) {
                 label.className = "task-list__label task-list__label--completed"
-            } else{
+            } else {
                 label.className = "task-list__label"
             }
         })
@@ -73,7 +41,7 @@ function renderTasks(): void {
 taskForm.addEventListener("submit", (event) => {
     event.preventDefault()
 
-    tasks.push({ id: lastTaskId++, title: taskInput.value, status: false })
+    tasks.push({ id: getNextTaskId(), title: taskInput.value, status: false })
     taskInput.value = ""
     taskInput.focus()
 
@@ -84,6 +52,9 @@ taskForm.addEventListener("submit", (event) => {
 //     console.log(tasks)
 // })
 
+// function deleteTask(): void {
+//     console.log('will implement later...')
+// }
+
 generateTasks();
 renderTasks();
-// console.log(tasks);
