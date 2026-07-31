@@ -4,9 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node init && vite",
+    "build": "node init && tsc && vite build",
     "preview": "vite preview"
+  },
+  "dependencies": {
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "typescript": "~6.0.2",
